@@ -1,0 +1,77 @@
+<app-menu></app-menu>
+<main class="form-signin text-center mt-5">
+
+    <form #f="ngForm" novalidate (ngSubmit)="onLogin()">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class=" mx-auto mt-8 h-16 w-16 text-blue-900" fill="none"
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        </svg>
+
+        <h1 class="h3 mb-3 fw-normal text-blue-900">Lamb Investigation</h1>
+
+        <div class="mx-auto w-96 font-calibri">
+            <div class="form-floating mb-2">
+                <input type="email" class=" form-control" name="email" id="email" autocomplete="off" required
+                    [(ngModel)]="email" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" name="password" id="password" required
+                    [(ngModel)]="password" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+        </div>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button
+            class="inline-block rounded-md bg-purple-500 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-purple-400"
+            type="submit">
+            <a class="text-white nav-link">Login</a>
+        </button>
+        <button
+            class="ml-1 inline-block rounded-md bg-red-500 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-purple-400">
+            <a class="text-white nav-link" href="">Google</a>
+        </button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
+    </form>
+</main>
+
+<!-- <div class="container d-flex justify-content-center">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/login"><i
+                            class="fa-solid fa-right-to-bracket"></i> Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/register"><i class="fa-solid fa-user-tag"></i> Crear Cuenta</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <form #f="ngForm" novalidate (ngSubmit)="onLogin()">
+                <div class="form-group">
+                    <label for="username">Nombre de Usuario/Email</label>
+                    <input type="text" class="form-control" name="username" id="username" autocomplete="off" required
+                        [(ngModel)]="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password" required
+                        [(ngModel)]="password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block" type="submit">
+                        <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->

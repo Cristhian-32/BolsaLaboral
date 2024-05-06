@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sisinvest-7a89e": {
+      "hosting": {
+        "Frontend-PIV": [
+          "sisinvest-7a89e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sisinvest-7a89e"
+  }
+}

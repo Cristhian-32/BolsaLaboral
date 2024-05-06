@@ -1,0 +1,15 @@
+.post-title {
+  font-size: 1.25rem; /* Tamaño de fuente para el título */
+  line-height: 1.5; /* Altura de línea para el título */
+  margin-bottom: 0.5rem; /* Espacio inferior entre el título y la descripción */
+  margin-left: 10px; /* Margen a la izquierda */
+  margin-right: 10px; /* Margen a la derecha */
+}
+
+.post-description {
+  font-size: 1rem; /* Tamaño de fuente para la descripción */
+  line-height: 1.5; /* Altura de línea para la descripción */
+  margin-bottom: 0.5rem; /* Espacio inferior entre la descripción y el botón */
+  margin-left: 40px; /* Margen a la izquierda */
+  margin-right: 40px; /* Margen a la derecha */
+}

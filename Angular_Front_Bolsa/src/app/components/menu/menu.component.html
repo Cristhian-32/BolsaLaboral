@@ -1,0 +1,138 @@
+<!-- Empieza aqui -->
+<nav class=" bg-slate-900 w-full flex relative justify-between items-center mx-auto px-8 h-20">
+  <!-- logo -->
+  <div class="inline-flex">
+    <a class="_o6689fn" href="/">
+      <div class="logo hidden md:block">
+        <img class="logo" src="assets/img/logo.png">
+      </div>
+      <div class="logo2 block md:hidden">
+        <img class="logo2 h-10" src="assets/img/logo2.png">
+      </div>
+    </a>
+  </div>
+  <!-- end logo -->
+  <!-- login -->
+  <div class="flex-initial">
+    <div class="flex justify-end items-center relative">
+      <div class="flex mr-4 items-center">
+        <ul class="flex mr-4 lg:flex lg:mx-auto lg:flex lg:items-center">
+          <li><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" href="#">
+            <i class="fa-solid fa-house"></i> Home</a></li>
+          <li *ngIf="isAdmin"><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" routerLink="/register-adviser">
+            <i class="fa-solid fa-user-tie"></i> Añadir Asesor</a></li>
+          <li *ngIf="isLogged"><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" routerLink="/list-student">
+            <i class="far fa-list-alt"></i> Listas</a></li>
+          <li *ngIf="isAdviser"><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" routerLink="/add-student">
+            <i class="fas fa-plus-circle"></i> Nuevo Estudiante</a></li>
+            <li *ngIf="isAdviser"><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" routerLink="/add-research">
+              <i class="fas fa-plus-circle"></i> Nuevo Registro</a></li>
+          <li><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" routerLink="/template">
+            <i class="fa-solid fa-file"></i> Plantillas</a></li>
+            <li><a class="nav-link inline-block py-2 px-3 hover:bg-gray-200 rounded-full text-gray-400" routerLink="/project">
+              <i class="fa-solid fa-file"></i> Proyectos</a></li>
+          <div class="nav-link block relative" *ngIf="isAdmin">
+            <button type="button" class="inline-block py-2 px-3 text-gray-400 hover:bg-gray-200 rounded-full relative ">
+              <div class="flex items-center h-5">
+                <div class="_xpkakx">
+                  <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;">
+                    <path
+                      d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </button>
+          </div>
+        </ul>
+      </div>
+
+      <!-- User -->
+      <div ngbDropdown placement="bottom-right" *ngIf="isLogged">
+        <a class="flex h-12 w-12 items-center overflow-hidden rounded-full bg-slate-900 text-slate-100 ring-slate-100 transition hover:shadow-md hover:ring-2"
+          role="button" ngbDropdownToggle>
+          <img class="user w-full object-cover"
+            src="https://laverdadnoticias.com/__export/1580495359056/sites/laverdad/img/2020/01/31/bojack_horseman_temporada_final.jpg_1835716012.jpg">
+        </a>
+        <div class="sub-menu-wrap right-0 mt-3 w-60 flex-col gap-3 rounded-xl bg-slate-900 p-4 text-slate-100 shadow-lg"
+          ngbDropdownMenu>
+          <div class="sub-menu flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center overflow-hidden rounded-full border-2 border-slate-600">
+              <img
+                src="https://laverdadnoticias.com/__export/1580495359056/sites/laverdad/img/2020/01/31/bojack_horseman_temporada_final.jpg_1835716012.jpg">
+            </div>
+            <div>
+              <div class="flex gap-1 text-sm font-semibold">
+                <span *ngIf="nameUser">{{nameUser}}</span>
+                <span class="text-sky-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z">
+                    </path>
+                  </svg>
+                </span>
+              </div>
+              <div class="text-xs text-slate-400" *ngIf="emailUser">{{emailUser}}</div>
+            </div>
+          </div>
+          <div class="border-t border-slate-500/30 mt-3" *ngIf="isAdviser"></div>
+          <div class="flex justify-around mt-3" *ngIf="isAdviser">
+            <div class="flex flex-col items-center justify-center">
+              <span class="text-3xl font-semibold">10</span>
+              <span class="text-sm text-slate-400">Pendientes</span>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <span class="text-3xl font-semibold">25</span>
+              <span class="text-sm text-slate-400">Revisados</span>
+            </div>
+          </div>
+          <div class="border-t border-slate-500/30 mt-3"></div>
+          <div class="flex flex-col mt-3">
+            <a href="#" class="dropdown-item text-inherit flex items-center gap-3 rounded-md py-2 px-3">
+              <i class="fa-solid fa-user"></i>
+              <span>Mi Perfil</span>
+            </a>
+            <a href="#" class="dropdown-item text-inherit flex items-center gap-3 rounded-md py-2 px-3">
+              <i class="fa-sharp fa-solid fa-wrench"></i>
+              <span> Ajustes</span>
+            </a>
+            <a href="#" class="dropdown-item text-inherit flex items-center gap-3 rounded-md py-2 px-3">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>Actividades</span>
+            </a>
+            <a href="#" class="dropdown-item text-inherit flex items-center gap-3 rounded-md py-2 px-3">
+              <i class="fa-sharp fa-solid fa-circle-info"></i>
+              <span>Ayuda</span>
+            </a>
+          </div>
+          <button class="logout-button bg-red-600 hover:bg-red-500 font-bold py-2 px-4 rounded mt-2" *ngIf="isLogged"
+            (click)="logOut()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a> Cerrar Sesión</a>
+          </button>
+        </div>
+      </div>
+      <!-- Buttons -->
+      <ul>
+        <form action="">
+        <button class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+          routerLink="/login" *ngIf="!isLogged"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</button>
+        <button class="hidden lg:inline-block py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+        routerLink="/register" *ngIf="!isLogged"><i class="fa-solid fa-user-tie"></i> Registrarse</button>
+        </form>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- end login -->
+</nav>
+<div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+  <div>
+      <a title="NO LE PIQUES AQUÍ" href="https://youtu.be/dQw4w9WgXcQ?si=Pvd13FMpnqi5NVil" target="_blank" class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+          <img class="object-cover object-center w-full h-full rounded-full" src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"/>
+      </a>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+.logo {
+    width: 350px;
+    height: auto;
+    
+}
+.logo2 {
+    width: 43px;
+    height: auto;
+    fill: currentColor;
+}
+
+.sub-menu-wrap:before {
+    position: absolute;
+    z-index: -5;
+    bottom: 100%;
+    left: 202px;
+
+    display: block;
+
+    width: 12px;
+    height: 12px;
+
+    content: '';
+    transform: rotate(-45deg) translateY(12px);
+
+    border-radius: 2px;
+    background: rgb(15 23 42);
+    box-shadow: none;
+}
+
+.logout-button {
+    
+    width: 100%;
+    text-align: center;
+}

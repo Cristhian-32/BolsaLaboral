@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<!-- component -->
+<div class=" p-6 bg-gray-100 flex items-center justify-center">
+    <div class="container max-w-screen-lg mx-auto">
+        <div>
+            <h2 class="font-semibold text-xl text-gray-600">Registro de Nuevo Estudiante</h2>
+            <p class="text-gray-500 mb-6">Jornada Científica</p>
+            <form #studentForm="ngForm" (ngSubmit)="onCreate(studentForm)">
+                <input type="hidden" name="id" [(ngModel)]="studentService.selectStudent.id">
+                <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+                    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+                        <div class="text-gray-600">
+                            <p class="font-medium text-lg">Detalles de Inscripción</p>
+                            <p>* Por favor ingrese los datos solicitados</p>
+                            <p>* Asegure que los datos ingresados son correctos</p>
+                            <p>* Solo puede inscribirse una vez</p>
+                            <p>* La Inscripción es por tiempo limitado</p>
+                            <p>* No olvide subir su artículo</p>
+                            <p>GRACIAS!</p>
+                        </div>
+                        <input type="hidden" name="id">
+                        <div class="lg:col-span-2">
+                            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                                <div class="md:col-span-5">
+                                    <label for="full_name">Nombres</label>
+                                    <input type="text" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                                        name="name" [(ngModel)]="studentService.selectStudent.name" autocomplete="off">
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label for="address">Apellido Paterno</label>
+                                    <input type="text" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                                        name="male_lastname" [(ngModel)]="studentService.selectStudent.male_lastname" autocomplete="off">
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label for="city">Apellido Materno</label>
+                                    <input type="text" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                                        name="female_lastname" [(ngModel)]="studentService.selectStudent.female_lastname" autocomplete="off">
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label for="zipcode">Código</label>
+                                    <input type="text"
+                                        class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                                        name="code" [(ngModel)]="studentService.selectStudent.code" autocomplete="off">
+                                </div>
+                                <div class="md:col-span-5 text-right">
+                                    <div class="inline-flex items-end lg:ml-auto lg:mr-2">
+                                        <button
+                                            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm py-2 px-4 text-center mr-2 mb-2" type="submit">Agregar</button>
+                                    </div>
+                                    <div class="inline-flex items-end lg:ml-auto lg:mr-2">
+                                        <button
+                                            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm py-2 px-4 text-center mr-2 mb-2" type="reset">Resetear</button>
+                                    </div>
+                                    <div class="inline-flex items-end lg:ml-auto lg:mr-2">
+                                        <button
+                                            class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm py-2 px-4 text-center mr-2 mb-2d" type="button" (click)="backReset(studentForm)">Cancelar</button>                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

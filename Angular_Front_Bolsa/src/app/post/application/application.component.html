@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+
+<div class="container mt-3 bg-slate-300">
+  <div class="jumbotron bg-slate-300">
+
+
+    <div class="mt-8 flex flex-col   px-3 sm:flex-row sm:space-x-6 sm:space-y-0">
+      <div href="" class="w-full max-w-sm overflow-hidden rounded-lg  ">
+        <h1 class="mt-10  text-2xl font-bold text-black static">Convocatoria</h1>
+        <p class="lead">¿Ques estas buscando?.</p>
+      </div>
+      <div class="w-full max-w-sm overflow-hidden rounded-lg  ">
+
+
+        <button
+          class="inline-block rounded-md bg-slate-900 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-green-400">
+          <a class="text-white nav-link" routerLink="/list-convocatoria">Ver todas las Convocatorias</a>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col items-center justify-center  px-4 sm:flex-row sm:space-x-6 sm:space-y-0">
+
+      <div href="" *ngFor="let item of postList"
+        class="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-xl cursor-pointer ">
+
+        <h2 class="my-2 text-center text-sm text-gray-500 post-title">{{item.title}}</h2>
+        <p class="my-4 text-center text-sm text-gray-500 post-description">{{item.description}}</p>
+
+        <div class="space-x-4 bg-gray-100 py-4 text-center">
+          <button
+            class="inline-block rounded-md bg-slate-900 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-green-400">
+            <a class="text-white nav-link" routerLink="/list-school">Postular</a>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+        id="mdi-alpha-i-circle" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M14,7H10V9H11V15H10V17H14V15H13V9H14V7Z" />
+      </svg>
+      <p class="lead">Buscar tus oportunidades</p>
+    </div>
+  </div>
+</div>
